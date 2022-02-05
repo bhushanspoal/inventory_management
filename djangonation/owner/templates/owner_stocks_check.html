@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+
+        .chart{
+            height:500px;
+            width:500px;
+        }
+        .pie-legend {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pie-legend span {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 100%;
+            margin-right: 16px;
+            margin-bottom: -2px;
+        }
+        .pie-legend li {
+            margin-bottom: 10px;
+        }
+        
+        </style>
+</head>
+<body>
+    <h1>hello {{email}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Description</th>
+                <th scope="col">Owner Email</th>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Customer Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items%}
+            <tr>
+                <td>{{item.Stock_id}}</td>
+                <td>{{item.Stock_name}}</td>
+                <td>{{item.Stock_quantity}}</td>
+                <td>{{item.Stock_description}}</td>
+                <td>{{item.owner}}</td>
+                <td>{{item.employee}}</td>
+                <td>{{item.customer}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+
+<div class="col-md-5 my-5 mx-auto">
+    <div class="card text-center shadow">
+        <div class="card-header text-left"><b>Frequently bought products</b> - Pie Chart with Legends</div>
+        <div class="card-body">
+            <div class="chart">
+            	<canvas id="property_types" class="pie"></canvas>
+            	<div id="pie_legend" class="py-3 text-left col-md-7 mx-auto"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+	// global options variable
+	var options = {
+		responsive: true,
+		easing:'easeInExpo',
+		scaleBeginAtZero: true,
+        // you don't have to define this here, it exists inside the global defaults
+	}
+
+		// PIE
+		// PROPERTY TYPE DISTRIBUTION
+		// context
+		var ctxPTD = $("#property_types").get(0).getContext("2d");
+		// data
+		var dataPTD = [
+			{
+				label: "Aashirvad Atta",
+				color: "#5093ce",
+				highlight: "#78acd9",
+				value: 30
+			},
+			{
+				label: "MTR Spices",
+				color: "#c7ccd1",
+				highlight: "#e3e6e8",
+				value: 42
+			},
+			{
+				label: "Energy Drinks",
+				color: "#7fc77f",
+				highlight: "#a3d7a3",
+				value: 6
+			},
+			{
+				label: "Red Label Tea Powder",
+				color: "#fab657",
+				highlight: "#fbcb88",
+				value: 8
+			},
+			{
+				label: "Groundnut Oil",
+				color: "#eaaede",
+				highlight: "#f5d6ef",
+				value: 8
+			},
+			{
+				label: "Colgate Paste",
+				color: "#dd6864",
+				highlight: "#e6918e",
+				value: 14
+			},
+			
+		]
+
+		// Property Type Distribution
+		var propertyTypes = new Chart(ctxPTD).Pie(dataPTD, options);
+			// pie chart legend
+			$("#pie_legend").html(propertyTypes.generateLegend());
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+</head>
+<body>
+    
+</body>
+</html> -->

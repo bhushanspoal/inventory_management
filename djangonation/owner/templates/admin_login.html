@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Login</title>
+    <style>
+        .decoration{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration">
+    <h1>Owner Log In</h1>
+    <form action="{% url 'admin_login' %}" method="post">
+        {% csrf_token %}
+    <p>Email: *<input type="email" name="email" id="email" required></p>
+    <p>Password: * <input type="password" name="password" id="password" required></p>
+    
+    <input type="submit" value="Log In" >
+</form>
+</div>
+</body>
+</html>

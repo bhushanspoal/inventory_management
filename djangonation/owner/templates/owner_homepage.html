@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Home Page</title>
+</head>
+<body>
+    <h1>Welcome {{email}}</h1>
+    <br><br>
+    <h2>Manage the Employees</h2>
+    <a href="{% url 'owner_employee_check'%}">Check</a>
+    <a href="{% url 'owner_employee_add'%}">Add</a>
+    <br><br>
+    <h2>Manage the Customers</h2>
+    <a href="{% url 'owner_customer_check'%}">Check</a>
+    <a href="{% url 'owner_customer_add'%}">Add</a>
+    <br><br>
+    <h2>Manage the Stocks</h2>
+    <a href="{% url 'owner_stocks_check'%}">Check</a>
+    <a href="{% url 'owner_stocks_add'%}">Add</a>
+    <br><br>
+    <h2>Manage the Orders</h2>
+    <a href="{% url 'owner_orders_check'%}">Check</a>
+    <a href="{% url 'owner_orders_add'%}">Add</a>
+    <br><br>
+    <h3>Log Out</h3>
+    <a href="">Log out</a>
+</body>
+</html>

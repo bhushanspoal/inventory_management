@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Home Page</title>
+</head>
+<body>
+    <h1>welcome {{email}}</h1>
+    <br><br>
+    <h2>Check the Stocks</h2>
+    <a href="{% url 'customer_stocks_check'%}">Check</a>
+    <br><br>
+    <h2>Manage the Orders</h2>
+    <a href="{% url 'customer_orders_check'%}">Check</a>
+    <a href="{% url 'customer_orders_add'%}">Add</a>
+    <br><br>
+    <h3>Log Out</h3>
+    <a href="">Log out</a>
+</body>
+</html>

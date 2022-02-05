@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello </h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">FName</th>
+                <th scope="col">LName</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Email</th>
+                <th scope="col">Owner Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items%}
+            <tr>
+                <td>{{item.Emp_id}}</td>
+                <td>{{item.Emp_fname}}</td>
+                <td>{{item.Emp_lname}}</td>
+                <td>{{item.Emp_sex}}</td>
+                <td>{{item.Emp_email}}</td>
+                <td>{{item.owner}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
